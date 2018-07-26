@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+div label input {
+    margin-right: 100px;
+}
+html, body {
+    /* height: 100%; */
+    font-family: sans-serif;
+}
+#ck-button {
+     margin: 4px;
+     background-color: #EFEFEF;
+     border-radius: 4px;
+     border: 1px solid #D0D0D0;
+     overflow: auto;
+     float: left;
+     width: 10%;
+     
+}
+#ck-button:hover {
+     background: red;
+}
+#ck-button label {
+     float: left;
+     width: 100%;
+}
+#ck-button label span {
+     text-align: center;
+     padding: 3px 0px;
+     display: block;
+}
+#ck-button label input {
+     position: absolute;
+     top: -20px;
+}
+#ck-button input:checked + span {
+     background-color: #911;
+     color: #fff;
+}
+
+ 
+/*.container{
+    border: 5px solid #ffcc5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.container > div{
+    width: 80%;
+    text-align: center;
+}
+.question{
+    background: rgb(22, 153, 17);
+}
+.answers{
+    display: flex;
+    border: 5px solid #ffcc5c;
+    background: #911;
+    flex-wrap: wrap;
+}
+.answers > div{
+    min-width: 200px;
+    max-width: 400px;
+    flex-basis: auto;flex-grow: 1;
+}
+.answer > div > span{
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+}
+.next-btn{
+    background: rgb(12, 9, 189);
+}
+
+@media screen and (max-width: 992px) {
+    .answers > div{
+        min-width: 200px;
+        max-width: 400px;
+        flex-basis: auto;flex-grow: 1;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .answers > div{
+        min-width: 230px;
+        max-width: 230px;
+        flex-basis: auto; 
+        flex-grow: 1;
+    }
+  } */
