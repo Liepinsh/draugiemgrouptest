@@ -1,13 +1,15 @@
 <?php 
 
 spl_autoload_register(function($class_name){
-    include $class_name . '.php';
+    include($class_name . '.php');
 });
+
+$test = $_GET['test'];
 
 class Test extends Dbh {
     
     public function getQuestion() {
-        $sql = "SELECT * FROM test1";
+        $sql = "SELECT * FROM " . $_GET['test'];
         $results = $this->connect()->query($sql);
         $numRows = $results->num_rows;
 

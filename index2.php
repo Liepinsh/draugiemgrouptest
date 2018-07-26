@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function($class_name){
-        include $class_name . '.php';
+    include($class_name . '.php');
 });
 
 ?>
@@ -25,7 +25,7 @@ spl_autoload_register(function($class_name){
 
     <div id="next-btn">
     <!-- need file and post -->
-        <form action="answer.php" method="post">
+        <form action="answer.php?testa=<?php echo $_GET['test']; ?>" method="post">
             <input type="hidden" id="data" name="data" value="">
             <input type="submit" value="Nākamais">
         </form>

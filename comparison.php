@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function($class_name){
-    include $class_name . '.php';
+    include($class_name . '.php');
 });
 
 $username = !empty($_POST['username']) ? $_POST['username'] : '';
@@ -17,29 +17,14 @@ class Comparison extends Dbh {
         if (($result->num_rows) > 0){
             header( "refresh:5;url=index.php" ); 
             echo 'Username did this test already! You\'ll be redirected back in about 5 secs. If not, click <a href="index.php">here</a>.';
-        //if username field is empty
+        //if username field and test is empty
         } else if(strlen($username) == 0 || empty($test)){
             header( "refresh:5;url=index.php" ); 
             echo 'Please enter Username and select a test! You\'ll be redirected back in about 5 secs. If not, click <a href="index.php">here</a>.';
         //if username is not in DB or he didnt fill selected test
-        } else if($test == 'test1'){
+        } else {
             include 'user.php';
-            header('Location: index2.php');
-            // insert the next test field in header
-            // header( "refresh:5;url=index.php" ); 
-            echo('test 1');
-        } else if($test == 'test2'){
-            include 'user.php';
-            // header('Location: index3.php');
-            // insert the next test field in header
-            // header( "refresh:5;url=index.php" ); 
-            echo('test 2');
-        } else if($test == 'test3'){
-            include 'user.php';
-            // header('Location: index4.php');
-            // insert the next test field in header
-            // header( "refresh:5;url=index.php" ); 
-            echo('test 3');
+            header('Location: index2.php?test=' . $test);
         }
     }
 }

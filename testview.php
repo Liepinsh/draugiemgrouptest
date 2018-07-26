@@ -1,7 +1,7 @@
 <?php 
 
 spl_autoload_register(function($class_name){
-    include $class_name . '.php';
+    include($class_name . '.php');
 });
 
 class TestView extends Test {
@@ -23,6 +23,11 @@ class TestView extends Test {
             <div id='ck-button'>
                 <label>
                     <input class='item-checkbox' type='checkbox' id='atbilde-3' name='".$data['atbilde3']."' value='" . $data['atbilde3'] . "'><span>".$data['atbilde3']."</span>
+                </label>
+            </div>
+            <div id='ck-button'>
+                <label>
+                    <input class='item-checkbox' type='checkbox' id='atbilde-4' name='".$data['atbilde4']."' value='" . $data['atbilde4'] . "'><span>".$data['atbilde4']."</span>
                 </label>
             </div>";
         }
