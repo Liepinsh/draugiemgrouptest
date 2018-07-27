@@ -17,59 +17,23 @@ spl_autoload_register(function($class_name){
 
 </head>
 <body>
+
+<div class="container">
     
+    <!-- including questions by initiating testview.php file -->
     <?php 
         $products = new TestView();
         $products->showQuestion();
     ?>
 
+    <!-- post form which submits checked answers -->
     <div id="next-btn">
-    <!-- need file and post -->
         <form action="answer.php?testa=<?php echo $_GET['test']; ?>" method="post">
             <input type="hidden" id="data" name="data" value="">
             <input type="submit" value="Nākamais">
         </form>
     </div>
-
-
-<!--
-<br>
-<br>
-<br>
-<br>
-
-
- <div class="container">
-    <div class="question">
-        <h1>Product List</h1>
-    </div>
-    <div class="answers">
-        <div id='ck-button'>
-            <label>
-                <input class='item-checkbox' type='checkbox' id='atbilde-1' name='one' value='one'><span>one</span>
-            </label>
-        </div>
-        <div id='ck-button'>
-            <label>
-                <input class='item-checkbox' type='checkbox' id='atbilde-1' name='one' value='one'><span>one</span>
-            </label>
-        </div>
-        <div id='ck-button'>
-            <label>
-                <input class='item-checkbox' type='checkbox' id='atbilde-1' name='one' value='one'><span>one</span>
-            </label>
-        </div>
-        <div id='ck-button'>
-            <label>
-                <input class='item-checkbox' type='checkbox' id='atbilde-1' name='one' value='one'><span>one</span>
-            </label>
-        </div>
-    </div>
-    <div class="next-btn">
-        <input type="button" value="button">
-    </div>
-</div> -->
-
+</div>
 
 <script type="text/javascript" src="main.js"></script>
 

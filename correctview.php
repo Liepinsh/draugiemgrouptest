@@ -8,6 +8,8 @@ class CorrectView extends Correct {
 
     public function showCorrect() {
         $datas = $this->correct();
+        
+        //displays called data from db
         foreach ($datas as $data) {
             echo "<h1>Paldies, " .$data['username']. "</h1>
                 <h2>Tu atbildēji pareizi uz " .$data['correct']. " no 3 jautājumiem";

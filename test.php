@@ -9,10 +9,12 @@ $test = $_GET['test'];
 class Test extends Dbh {
     
     public function getQuestion() {
+        //query to get information from specific test
         $sql = "SELECT * FROM " . $_GET['test'];
         $results = $this->connect()->query($sql);
         $numRows = $results->num_rows;
 
+        //if information is in the DB, then inserts the information in a empty array
         if ($numRows > 0) {
             while ($row = $results->fetch_assoc()) {
                 $data[] = $row;
@@ -21,7 +23,3 @@ class Test extends Dbh {
         }
     }
 }
-
-// $sql = "SELECT test FROM draugiem WHERE test = (SELECT * FROM (SELECT MAX(test) from draugiem) as t)";
-// $sql = "SELECT Country FROM Customers WHERE CustomerID = (SELECT * FROM (SELECT MAX(CustomerID) from Customers) as t)";
-//         $result = $this->connect()->query($sql);

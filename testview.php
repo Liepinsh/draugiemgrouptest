@@ -8,6 +8,8 @@ class TestView extends Test {
 
     public function showQuestion() {
         $datas = $this->getQuestion();
+        
+        //displays called data from db
         foreach ($datas as $data) {
             echo "<h1>" . $data['jautajums'] . "</h1>
             <div id='ck-button'>
