@@ -21,7 +21,7 @@ class Answer extends Dbh {
                 if (strlen($row['testchange']) >= 7){
                     if (strlen($answer) == 0 || empty($answer)){
                         header( "refresh:5;url=index2.php?test=" . $_GET['testa']); 
-                        echo 'Pick atleast one answer! You\'ll be redirected back in about 5 secs. If not, click <a href="index.php">here</a>.';
+                        echo('Pick atleast one answer! You\'ll be redirected back in about 5 secs. If not, click <a href="index2.php?test=' . $_GET['testa'].'">here</a>.');
                     } else if (($result->num_rows) > 0){
                         $sql_3 = "UPDATE draugiem SET correct = correct +1 WHERE id = (SELECT * FROM (SELECT MAX(id) from draugiem) as t)";
                         $result_3 = $this->connect()->query($sql_3);
@@ -33,7 +33,7 @@ class Answer extends Dbh {
                     //checks if user picked an answer
                     if (strlen($answer) == 0 || empty($answer)){
                         header( "refresh:5;url=index2.php?test=" . $_GET['testa']); 
-                        echo 'Pick atleast one answer! You\'ll be redirected back in about 5 secs. If not, click <a href="index.php">here</a>.';
+                        echo('Pick atleast one answer! You\'ll be redirected back in about 5 secs. If not, click <a href="index2.php?test=' . $_GET['testa'].'">here</a>.');
                     //if answer is picked and answer is correct
                     } else if (($result->num_rows) > 0){
                         $sql = "UPDATE draugiem SET testchange = CONCAT(testchange, 'testchange'+1), correct = correct +1 WHERE id = (SELECT * FROM (SELECT MAX(id) from draugiem) as t)";
